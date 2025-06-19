@@ -37,6 +37,11 @@ RUN set -eux; \
   rm julia.tar.gz; \
   julia --version
 
+FROM debian:bookworm-slim
+
+COPY --from=build-env /usr/local/julia /usr/local/julia
+ENV PATH /usr/local/julia/bin:$PATH
+
 WORKDIR /genie
 
 COPY hello.js .
