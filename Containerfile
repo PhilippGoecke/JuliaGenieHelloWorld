@@ -44,6 +44,8 @@ ENV PATH /usr/local/julia/bin:$PATH
 
 WORKDIR /genie
 
+RUN julia -e 'using Pkg; Pkg.activate("."); Pkg.instantiate(); Pkg.add(Genie);'
+
 COPY hello.js .
 
 CMD ["julia", "hello.js"]
