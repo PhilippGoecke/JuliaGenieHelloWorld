@@ -9,4 +9,4 @@ route("/hello") do
   "Hello $name!"
 end
 
-up(8000, async = false)
+up(8000, '0.0.0.0', async = false)
