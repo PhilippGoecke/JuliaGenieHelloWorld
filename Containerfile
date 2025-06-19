@@ -38,6 +38,9 @@ RUN set -eux; \
 # new stage for Genie
 FROM debian:bookworm-slim
 
+RUN useradd --create-home --shell /bin/bash genie
+USER genie
+
 COPY --from=build-env /usr/local/julia /usr/local/julia
 ENV PATH /usr/local/julia/bin:$PATH
 
