@@ -45,4 +45,6 @@ WORKDIR /genie
 
 COPY hello.js .
 
+EXPOSE 8000
+
 CMD ["julia", "hello.js"]
