@@ -16,13 +16,11 @@ ENV PATH $JULIA_PATH/bin:$PATH
 # Julia (Binary signing key) <buildbot@julialang.org>
 ENV JULIA_GPG 3673DF529D9049477F76B37566E3C7DC03D6E495
 
-# https://julialang.org/downloads/
-ENV JULIA_VERSION 1.11.5
-
+# install Julia
 RUN set -eux; \
-# https://julialang.org/downloads/#julia-command-line-version
-# https://julialang-s3.julialang.org/bin/checksums/julia-1.11.5.sha256
+# https://julialang.org/downloads/
   url='https://julialang-s3.julialang.org/bin/linux/x64/1.11/julia-1.11.5-linux-x86_64.tar.gz'; \
+# https://julialang-s3.julialang.org/bin/checksums/julia-1.11.5.sha256
   sha256='723e878c642220cc0251a0e13758c059a389cadc7f01376feaf1ea7388fe8f9c'; \
   curl -fL -o julia.tar.gz.asc "$url.asc"; \
   curl -fL -o julia.tar.gz "$url"; \
@@ -37,6 +35,7 @@ RUN set -eux; \
   rm julia.tar.gz; \
   julia --version
 
+# new stage for Genie
 FROM debian:bookworm-slim
 
 COPY --from=build-env /usr/local/julia /usr/local/julia
