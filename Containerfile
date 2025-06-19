@@ -70,4 +70,8 @@ RUN set -eux; \
 # smoke test
 	julia --version
 
-CMD ["julia"]
+WORKDIR /genie
+
+COPY hello.js .
+
+CMD ["julia", "hello.js"]
