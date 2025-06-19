@@ -48,6 +48,9 @@ WORKDIR /genie
 
 # GENIE_ENV "dev"
 ENV GENIE_ENV "prod"
+ENV HOST "0.0.0.0"
+ENV PORT "8000"
+ENV EARLYBIND "true"
 
 COPY hello.js .
 
