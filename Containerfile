@@ -2,8 +2,7 @@ FROM debian:bookworm-slim as build-env
 
 ARG DEBIAN_FRONTEND=noninteractive
 
-RUN set -eux \
-  && apt update && apt upgrade -y \
+RUN apt update && apt upgrade -y \
   # install tools
   && apt install -y --no-install-recommends ca-certificates curl gnupg \
   # make image smaller
