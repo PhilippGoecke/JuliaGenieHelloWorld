@@ -6,7 +6,6 @@ RUN apt update && apt upgrade -y \
   # install tools
   && apt install -y --no-install-recommends ca-certificates curl gnupg \
   # make image smaller
-  && apt purge -y --auto-remove curl unzip \
   && rm -rf "/var/lib/apt/lists/*" \
   && rm -rf /var/cache/apt/archives
 
