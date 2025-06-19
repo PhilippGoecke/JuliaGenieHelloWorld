@@ -50,4 +50,4 @@ COPY hello.jl .
 
 EXPOSE 8000
 
-CMD ["julia", "hello.js"]
+CMD ["julia", "hello.jl"]
