@@ -46,13 +46,7 @@ ENV PATH /usr/local/julia/bin:$PATH
 
 WORKDIR /genie
 
-# GENIE_ENV "dev"
-ENV GENIE_ENV "prod"
-ENV HOST "0.0.0.0"
-ENV PORT "8000"
-ENV EARLYBIND "true"
-
-COPY hello.js .
+COPY hello.jl .
 
 EXPOSE 8000
 
