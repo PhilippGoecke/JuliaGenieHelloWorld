@@ -1,3 +1,6 @@
+import Pkg;
+Pkg.add("Genie")
+
 using Genie
 
 route("/hello") do
@@ -5,3 +8,5 @@ route("/hello") do
 
   "Hello $name!"
 end
+
+up(8000, async = false)
