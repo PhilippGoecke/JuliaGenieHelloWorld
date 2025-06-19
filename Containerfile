@@ -43,6 +43,9 @@ ENV PATH /usr/local/julia/bin:$PATH
 
 WORKDIR /genie
 
+# GENIE_ENV "dev"
+ENV GENIE_ENV "prod"
+
 COPY hello.js .
 
 EXPOSE 8000
